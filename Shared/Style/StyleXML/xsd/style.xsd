@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="style">
+	<xs:complexType>
+		<xs:element name="class" minOccurs="0" maxOccurs="unbounded">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="background" type="backgroundType" minOccurs="0"/>
+					<xs:element name="outline" type="outlineType" minOccurs="0"/>
+					<xs:element name="font" type="fontType" minOccurs="0"/>
+					<xs:element name="shape" type="shapeType" minOccurs="0"/>
+					<xs:element name="arrow" type="arrowType" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:token" use="required" />
+			</xs:complexType>
+		</xs:element>
+		<xs:attribute name="id" type="xs:token" use="required" />
+		<xs:attribute name="version" use="required" />
+	</xs:complexType>
+</xs:element>
+
+<xs:simpleType name="colorType">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[0-9|a-f|A-F]{6}" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="fontType">
+	<xs:attribute name="name" type="xs:string" use="optional" default="Times"/>
+	<xs:attribute name="size" type="xs:integer" use="optional" default="8"/>
+	<xs:attribute name="color" type="colorType" use="optional" default="000000"/>
+	<xs:attribute name="bold" type="xs:boolean" use="optional" default="false"/>
+	<xs:attribute name="italic" type="xs:boolean" use="optional" default="false"/>
+	<xs:attribute name="align" use="optional" default="left">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				 <xs:enumeration value="left" />
+				 <xs:enumeration value="right" />
+				 <xs:enumeration value="center" />
+			</xs:restriction>
+		</xs:simpleType>   
+	</xs:attribute>
+</xs:complexType>
+ 
+<xs:simpleType name="brushType">
+	<xs:restriction base="xs:string">
+		 <xs:enumeration value="transparent"/>
+		 <xs:enumeration value="solid"/>
+		 <xs:enumeration value="dense1"/>
+		 <xs:enumeration value="dense2"/>
+		 <xs:enumeration value="dense3"/>
+		 <xs:enumeration value="dense4"/>
+		 <xs:enumeration value="dense5"/>
+		 <xs:enumeration value="dense6"/>
+		 <xs:enumeration value="dense7"/>
+		 <xs:enumeration value="horizontal"/>
+		 <xs:enumeration value="vertiacal"/>
+		 <xs:enumeration value="cross"/>
+		 <xs:enumeration value="backDiagonal"/>
+		 <xs:enumeration value="forwardDiagonal"/>
+		 <xs:enumeration value="crossDiagonal"/>
+		 <xs:enumeration value="linearGradient"/>
+		 <xs:enumeration value="radialGradient"/>
+	</xs:restriction>
+</xs:simpleType>   			
+
+<xs:complexType name="outlineType">
+	<xs:attribute name="color" type="colorType" use="optional" default="000000"/>
+	<xs:attribute name="width" type="xs:integer" use="optional" default="1" />
+	<xs:attribute name="line" use="optional" default="solidLine">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				 <xs:enumeration value="noLine"/>
+				 <xs:enumeration value="solidLine"/>
+				 <xs:enumeration value="dashLine"/>
+				 <xs:enumeration value="dotLine"/>
+				 <xs:enumeration value="dashDotLine"/>
+				 <xs:enumeration value="dashDotDotLine"/>
+			</xs:restriction>
+		</xs:simpleType>   			
+	</xs:attribute>
+	<xs:attribute name="cap" use="optional" default="flatCap">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				 <xs:enumeration value="flatCap"/>
+				 <xs:enumeration value="squareCap"/>
+				 <xs:enumeration value="roundCap"/>
+			</xs:restriction>
+		</xs:simpleType>   			
+	</xs:attribute>
+	<xs:attribute name="join" use="optional" default="miterJoin">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				 <xs:enumeration value="miterJoin"/>
+				 <xs:enumeration value="bevelJoin"/>
+				 <xs:enumeration value="roundJoin"/>
+			</xs:restriction>
+		</xs:simpleType>   			
+	</xs:attribute>
+</xs:complexType>
+
+<xs:complexType name="backgroundType">
+	<xs:attribute name="color" type="colorType" use="optional" default="ffffff"/>
+	<xs:attribute name="brush" type="brushType" use="optional" default="solid"/>
+</xs:complexType>
+
+<xs:complexType name="shapeType">
+	<xs:attribute name="name" use="optional" default="rectagle">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				 <xs:enumeration value="square"/>
+				 <xs:enumeration value="roundedSquare"/>
+				 <xs:enumeration value="rectagle"/>
+				 <xs:enumeration value="roundedRect"/>
+				 <xs:enumeration value="rhombus"/>
+				 <xs:enumeration value="triangle"/>
+				 <xs:enumeration value="reverseTriangle"/>
+				 <xs:enumeration value="ellipse"/>
+				 <xs:enumeration value="circle"/>
+				 <xs:enumeration value="hexagon"/>
+				 <xs:enumeration value="image"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="path" type="xs:token" use="optional" default="">
+</xs:complexType>
+
+<xs:complexType name="arrowType">
+	<xs:attribute name="name" use="optional" default="full">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				 <xs:enumeration value="none"/>
+				 <xs:enumeration value="empty"/>
+				 <xs:enumeration value="full"/>
+				 <xs:enumeration value="circular"/>
+				 <xs:enumeration value="diamond"/>
+		  </xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+</xs:complexType>

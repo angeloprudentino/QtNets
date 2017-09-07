@@ -1,0 +1,9 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+*.conf
+*.directory
+/TODO.txt
+/USE_CASES.txt
+/.debris/
+/BEST_PRACTICES.txt
+/TESI.txt
+/OUT/

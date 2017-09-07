@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile id="Network1" version="1.0" numsamples="1000">
+    <properties>
+        <property id="prop1">01</property>
+        <property id="prop2">02</property>
+        <property id="prop3">03</property>
+        <property id="prop4">04</property>
+    </properties>
+    <algparams>
+        <epis proplen="0" numstates1="1" numstates2="2" numstates3="3" eps1="0.1" eps2="30.02" eps3="10.985" eps4="1"/>
+    </algparams>
+    <nodes>
+        <cpt id="Core_C_FN1">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>LINUX_OS_FN1 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">C_IMPLEMENTED</property>
+            <property id="Type">SW</property>
+            <property id="VID">CORE1_F</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">PRINT_F WD WI</property>
+        </cpt>
+        <cpt id="Core_C_FN2">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>LINUX_OS_FN2 LINUX_OS_FN3 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">C_IMPLEMENTED</property>
+            <property id="Type">SW</property>
+            <property id="VID">CORE2_F</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">MEM_F MATH_F WD WI</property>
+        </cpt>
+        <cpt id="Core_C_FN3">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>Core_C_FN1 Core_C_FN2 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">C_IMPLEMENTED</property>
+            <property id="Type">SW</property>
+            <property id="VID">MAIN_CORE_F</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">CORE1_F CORE2_F WD WI</property>
+        </cpt>
+        <decision id="EZ9TCH3YOVBcD5RxCJFr">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+        </decision>
+        <cpt id="F1">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>LINUX_OS_FN2 LyIZxuhJDHY90RTwK7m2 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Type">SW</property>
+            <property id="VID">F1_T</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">WD WI MATH_F</property>
+        </cpt>
+        <cpt id="F2">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>LINUX_OS_FN3 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Type">SW</property>
+            <property id="VID">F2_T</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">WD WI MEM_F</property>
+        </cpt>
+        <cpt id="F3">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>Core_C_FN3 F2 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Type">SW</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">WD WI MAIN_CORE_F F2_T</property>
+        </cpt>
+        <cpt id="F4">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>F1 LINUX_OS_FN1 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Type">SW</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">WD WI PRINT_F F1_T</property>
+        </cpt>
+        <noisymax id="L1">
+            <state id="Failure"/>
+            <state id="Success"/>
+            <parents>L1Tech_22n Util cYYarHWrZUtDWimFQHUZ</parents>
+            <parameters>0.4 0.6 0.004 0.996</parameters>
+            <property id="Area">90</property>
+            <property id="Cluster">x86</property>
+            <property id="Type">HW</property>
+            <property id="VID">DC1</property>
+            <property id="cpt">0.4 0.6 0.004 0.996</property>
+            <property id="parents_order">L1_T</property>
+        </noisymax>
+        <noisymax id="L1Tech_22n">
+            <state id="Failure"/>
+            <state id="Success"/>
+            <parents>decision1</parents>
+            <strengths>1 2 3</strengths>
+            <parameters>0.4 0.6 0.004 0.996</parameters>
+            <property id="Area">0</property>
+            <property id="Cluster">22n</property>
+            <property id="Type">TECH</property>
+            <property id="VID">L1_T</property>
+        </noisymax>
+        <cpt id="L2">
+            <state id="Failure"/>
+            <state id="Success"/>
+            <parents>L2Tech_22n RAM</parents>
+            <probabilities>0.98 0.02 0.793 0.207 0.26 0.74 0.003 0.997</probabilities>
+            <property id="Area">200</property>
+            <property id="Cluster">x86</property>
+            <property id="Type">HW</property>
+            <property id="VID">DC2</property>
+            <property id="cpt">0.98 0.02 0.793 0.207 0.26 0.74 0.003 0.997</property>
+            <property id="parents_order">L2_T RAM</property>
+        </cpt>
+        <cpt id="L2Tech_22n">
+            <state id="Failure"/>
+            <state id="Success"/>
+            <parents>mau1</parents>
+            <probabilities>0.02 0.98</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">22n</property>
+            <property id="Type">TECH</property>
+            <property id="VID">L2_T</property>
+        </cpt>
+        <cpt id="LINUX_OS_FN1">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">LINUX</property>
+            <property id="Type">SW</property>
+            <property id="VID">PRINT_F</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">WI WD</property>
+        </cpt>
+        <cpt id="LINUX_OS_FN2">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">LINUX</property>
+            <property id="Type">SW</property>
+            <property id="VID">MATH_F</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">WI WD</property>
+        </cpt>
+        <cpt id="LINUX_OS_FN3">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">LINUX</property>
+            <property id="Type">SW</property>
+            <property id="VID">MEM_F</property>
+            <property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+            <property id="parents_order">WI WD</property>
+        </cpt>
+        <decision id="LyIZxuhJDHY90RTwK7m2">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+            <parents>EZ9TCH3YOVBcD5RxCJFr F4 cYYarHWrZUtDWimFQHUZ decision1</parents>
+        </decision>
+        <cpt id="Output">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>F3 F4</parents>
+            <probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">Output</property>
+            <property id="Type">SYSD</property>
+            <property id="VID">MainOut</property>
+        </cpt>
+        <utility id="RAM">
+            <parents>RAMTech_22n</parents>
+            <utilities>0.98 0.02 0.001 0.999</utilities>
+            <property id="Area">500</property>
+            <property id="Type">HW</property>
+            <property id="VID">RAM</property>
+        </utility>
+        <cpt id="RAMTech_22n">
+            <state id="Failure"/>
+            <state id="Success"/>
+            <probabilities>0.25 0.75</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">22n</property>
+            <property id="Type">TECH</property>
+            <property id="VID">RAM_T</property>
+        </cpt>
+        <cpt id="RF">
+            <state id="Failure"/>
+            <state id="Success"/>
+            <parents>RFTech_22n</parents>
+            <probabilities>0.89 0.11 0.01 0.99</probabilities>
+            <property id="Area">50</property>
+            <property id="Cluster">x86</property>
+            <property id="Type">HW</property>
+            <property id="VID">GPR</property>
+            <property id="cpt">0.89 0.11 0.01 0.99</property>
+            <property id="parents_order">RF_T</property>
+        </cpt>
+        <noisyadder id="RFTech_22n">
+            <state id="Failure"/>
+            <state id="Success"/>
+            <dstates>5 69 8 7</dstates>
+            <weights>0.0001 0.9999 1.59873</weights>
+            <parameters>0.0001 0.9999 5.6 3.3332</parameters>
+            <property id="Area">0</property>
+            <property id="Cluster">22n</property>
+            <property id="Type">TECH</property>
+            <property id="VID">RF_T</property>
+        </noisyadder>
+        <deterministic id="SFM_Wrong_Data">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>cYYarHWrZUtDWimFQHUZ x86_64</parents>
+            <resultingstates>State0 State1</resultingstates>
+            <property id="Area">0</property>
+            <property id="Cluster">SFM</property>
+            <property id="Type">SFM</property>
+            <property id="VID">WD</property>
+        </deterministic>
+        <cpt id="SFM_Wrong_Instruction">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>x86_64</parents>
+            <probabilities>0.5 0.5 0.5 0.5</probabilities>
+            <property id="Area">0</property>
+            <property id="Cluster">FM</property>
+            <property id="Type">SFM</property>
+            <property id="VID">WI</property>
+        </cpt>
+        <utility id="Util">
+            <parents>L1</parents>
+            <utilities>0.98 0.02 0.001 0.999</utilities>
+        </utility>
+        <decision id="cYYarHWrZUtDWimFQHUZ">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+            <parents>L2Tech_22n</parents>
+        </decision>
+        <decision id="decision1">
+            <state id="State0"/>
+            <state id="State1"/>
+            <parents>SFM_Wrong_Data SFM_Wrong_Instruction mau2</parents>
+            <property id="Area">0</property>
+            <property id="Cluster">LINUX</property>
+        </decision>
+        <decision id="decision2">
+            <state id="State0"/>
+            <state id="State1"/>
+        </decision>
+        <mau id="mau1">
+            <parents>RAMTech_22n</parents>
+            <weights>0.98 0.02 0.001 0.999</weights>
+            <property id="Type">HW</property>
+        </mau>
+        <mau id="mau2">
+            <parents>decision1 decision2</parents>
+            <weights>0.98 0.02 0.001 0.999</weights>
+        </mau>
+        <cpt id="x86_64">
+            <state id="Failure"/>
+            <state id="Success"/>
+            <parents>L1 L2 RF</parents>
+            <probabilities>0.8 0.2 0.78 0.22 0.334 0.666 0.45 0.55 0.87 0.13 0.85 0.15 0.21 0.79 0 1</probabilities>
+            <property id="Area">700</property>
+            <property id="Cluster">x86</property>
+            <property id="Type">MHW</property>
+            <property id="VID">UPC</property>
+            <property id="cpt">0.8 0.2 0.78 0.22 0.334 0.666 0.45 0.55 0.87 0.13 0.85 0.15 0.21 0.79 0 1</property>
+            <property id="parents_order">DC2 DC1 GPR</property>
+        </cpt>
+    </nodes>
+    <observationcost>
+        <node id="nodo1">
+            <cost>0.1 0.2 0.3 10 0</cost>
+        </node>
+        <node id="nodo2">
+            <cost></cost>
+        </node>
+        <node id="nodo3">
+            <parents>parent1 parent2 parent3</parents>
+            <cost>0.1 0.2 0.3 10 0</cost>
+        </node>
+    </observationcost>
+    <extensions>
+        <genie version="1.0" name="Network1" faultnameformat="user">
+            <submodel id="9TCH3YOVBcD5RxCJFrLy">
+                <name>New Model</name>
+                <interior color="FFFFFF"/>
+                <outline color="000000" width="1"/>
+                <font color="000000" name="Times" size="8"/>
+                <position>-1665 -957 -88 45</position>
+                <node id="Core_C_FN1">
+                    <name>Core_C_FN1</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1127 590 1292 621</position>
+                </node>
+                <node id="Core_C_FN2">
+                    <name>Core_C_FN2</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1350 607 1515 638</position>
+                </node>
+                <node id="Core_C_FN3">
+                    <name>Core_C_FN3</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1221 758 1386 789</position>
+                </node>
+                <node id="F1">
+                    <name>F1</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>523 518 574 549</position>
+                </node>
+                <node id="F2">
+                    <name>F2</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>810 725 861 756</position>
+                </node>
+                <node id="F3">
+                    <name>F3</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>960 748 1011 779</position>
+                </node>
+                <node faultnameformat="nodestate" id="L1">
+                    <name>L1</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>779 116 815 138</position>
+                    <link title="dsddd" path="dsdg"/>
+                </node>
+                <node faultnameformat="inherit" id="L1Tech_22n">
+                    <name>L1Tech_22n</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>697 33 797 55</position>
+                    <link title="gdgdf" path="dsdgsd"/>
+                    <link title="dffdff" path="gggg"/>
+                </node>
+                <node id="L2">
+                    <name>L2</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1021 204 1057 226</position>
+                    <barchart active="true" width="1" height="5"/>
+                </node>
+                <node id="L2Tech_22n">
+                    <name>L2Tech_22n</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>888 127 1048 149</position>
+                </node>
+                <node id="LINUX_OS_FN1">
+                    <name>LINUX_OS_FN1</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>862 481 963 512</position>
+                </node>
+                <node id="LINUX_OS_FN2">
+                    <name>LINUX_OS_FN2</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>971 325 1060 356</position>
+                </node>
+                <node id="LINUX_OS_FN3">
+                    <name>LINUX_OS_FN3</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1128 435 1295 466</position>
+                </node>
+                <node id="Output">
+                    <name>Output</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>804 847 855 878</position>
+                </node>
+                <node id="RAM">
+                    <name>RAM</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1279 185 1439 207</position>
+                </node>
+                <node id="RAMTech_22n">
+                    <name>RAMTech_22n</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1320 92 1433 114</position>
+                </node>
+                <node id="RF">
+                    <name>RF</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1153 250 1189 272</position>
+                    <question>fddfgdgdf</question>
+                    <defcomment col="2" row="3"/>
+                    <defcomment col="8" row="4"/>
+                </node>
+                <node id="RFTech_22n">
+                    <name>RFTech_22n</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1146 89 1226 111</position>
+                    <defcomment col="4" row="5"/>
+                </node>
+                <node id="SFM_Wrong_Data">
+                    <name>SFM_Wrong_Data</name>
+                    <interior color="ff0000"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>676 315 874 345</position>
+                    <state id="id1" faultname="fault">
+                        <fix>fix</fix>
+                        <comment>comment</comment>
+                        <link title="gdgdf" path="dsdgsd"/>
+                        <link title="dffdff" path="gggg"/>
+                    </state>
+                </node>
+                <node id="SFM_Wrong_Instruction">
+                    <name>SFM_Wrong_Instruction</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>1206 318 1369 349</position>
+                </node>
+                <node id="Util">
+                    <name>Util</name>
+                    <interior color="FF00FF"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="Times" size="8"/>
+                    <position>577 68 602 91</position>
+                </node>
+                <node id="cYYarHWrZUtDWimFQHUZ">
+                    <name>New Node</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="Times" size="8"/>
+                    <position>482 250 547 280</position>
+                </node>
+                <node id="decision1">
+                    <name>decision1</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="Times" size="8"/>
+                    <position>288 12 408 54</position>
+                </node>
+                <node id="decision2">
+                    <name>decision2</name>
+                    <interior color="0000FF"/>
+                    <outline color="FF0000" width="3"/>
+                    <font color="FF0000" name="Times" size="8"/>
+                    <position>95 47 201 97</position>
+                </node>
+                <node id="mau1">
+                    <name>mau1</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="000000" width="4"/>
+                    <font color="000000" name="Times" size="8"/>
+                    <position>926 19 958 42</position>
+                </node>
+                <node id="mau2">
+                    <name>mau2</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="Times" size="8"/>
+                    <position>228 186 299 221</position>
+                </node>
+                <submodel id="s2">
+                    <name>s2</name>
+                    <interior color="ffffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="MS Sans Serif" size="8"/>
+                    <position>87 200 430 372</position>
+                    <window>516 609 567 640</window>
+                    <node id="EZ9TCH3YOVBcD5RxCJFr">
+                        <name>New Node</name>
+                        <interior color="FFFFFF"/>
+                        <outline color="000000" width="1"/>
+                        <font color="000000" name="Times" size="8"/>
+                        <position>169 12 234 42</position>
+                    </node>
+                    <node id="LyIZxuhJDHY90RTwK7m2">
+                        <name>New Node</name>
+                        <interior color="FFFFFF"/>
+                        <outline color="000000" width="1"/>
+                        <font color="000000" name="Times" size="8"/>
+                        <position>248 67 313 97</position>
+                    </node>
+                    <submodel id="s84">
+                        <name>s84</name>
+                        <interior color="ffffff"/>
+                        <outline color="000000" width="1"/>
+                        <font color="000000" name="MS Sans Serif" size="8"/>
+                        <position>28 16 79 47</position>
+                    </submodel>
+                    <textbox>
+                        <caption>caption</caption>
+                        <font color="000000" name="MS Sans Serif" size="8" align="center"/>
+                        <position>47 59 196 106</position>
+                        <comment>test comment</comment>
+                    </textbox>
+                </submodel>
+                <submodel id="s8">
+                    <name>s8</name>
+                    <interior color="ffffff"/>
+                    <outline color="00aa00" width="2"/>
+                    <font color="0000aa" name="MS Sans Serif" size="8"/>
+                    <position>463 701 587 787</position>
+                    <node id="F4">
+                        <name>F4</name>
+                        <interior color="ffffff"/>
+                        <outline color="000000" width="1"/>
+                        <font color="000000" name="MS Sans Serif" size="8"/>
+                        <position>28 5 79 36</position>
+                        <state id="id1" faultname="fault">
+                            <fix>fix</fix>
+                            <comment>comment</comment>
+                            <link title="gdgdf" path="dsdgsd"/>
+                            <link title="dffdff" path="gggg"/>
+                        </state>
+                        <state id="id2">
+                            <link title="gdgdf" path="dsdgsd"/>
+                            <link title="dffdff" path="gggg"/>
+                        </state>
+                    </node>
+                </submodel>
+                <node id="x86_64">
+                    <name>x86_64</name>
+                    <interior color="00ffff"/>
+                    <outline color="000000" width="1"/>
+                    <font color="0000FF" name="MS Sans Serif" size="8"/>
+                    <position>823 267 974 289</position>
+                    <state id="id1" faultname="fault">
+                        <fix>fix</fix>
+                        <comment>comment</comment>
+                        <link title="gdgdf" path="dsdgsd"/>
+                        <link title="dffdff" path="gggg"/>
+                    </state>
+                    <state id="id2">
+                        <link title="gdgdf" path="dsdgsd"/>
+                        <link title="dffdff" path="gggg"/>
+                    </state>
+                    <state id="id3">
+                        <fix>fix</fix>
+                        <link title="gdgdf" path="dsdgsd"/>
+                    </state>
+                    <state id="id4">
+                        <comment>comment</comment>
+                        <link title="gdgdf" path="dsdgsd"/>
+                    </state>
+                </node>
+                <textbox>
+                    <caption>caption 1</caption>
+                    <font color="00FF00" name="MS Sans Serif" size="8" italic="true"/>
+                    <position>937 803 1110 891</position>
+                    <comment>test comment</comment>
+                </textbox>
+                <textbox>
+                    <caption>caption 3</caption>
+                    <font color="FF0000" name="MS Sans Serif" size="10" bold="true" italic="true"/>
+                    <position>97 527 358 702</position>
+                    <comment>test comment</comment>
+                </textbox>
+                <textbox>
+                    <caption>New Note</caption>
+                    <font color="000000" name="Times" size="8"/>
+                    <position>51 236 126 274</position>
+                </textbox>
+            </submodel>
+            <arccomment parent="Core_C_FN1" child="Core_C_FN3"/>
+            <arccomment parent="Core_C_FN2" child="Core_C_FN3"/>
+            <arccomment parent="Core_C_FN3" child="F3"/>
+            <arccomment parent="EZ9TCH3YOVBcD5RxCJFr" child="LyIZxuhJDHY90RTwK7m2"/>
+            <arccomment parent="F1" child="F4"/>
+            <arccomment parent="F2" child="F3"/>
+            <arccomment parent="F3" child="Output"/>
+            <arccomment parent="F4" child="LyIZxuhJDHY90RTwK7m2"/>
+            <arccomment parent="F4" child="Output"/>
+            <arccomment parent="L1" child="Util"/>
+            <arccomment parent="L1" child="x86_64"/>
+            <arccomment parent="L1Tech_22n" child="L1"/>
+            <arccomment parent="L2" child="x86_64"/>
+            <arccomment parent="L2Tech_22n" child="L2"/>
+            <arccomment parent="L2Tech_22n" child="cYYarHWrZUtDWimFQHUZ"/>
+            <arccomment parent="LINUX_OS_FN1" child="Core_C_FN1"/>
+            <arccomment parent="LINUX_OS_FN1" child="F4"/>
+            <arccomment parent="LINUX_OS_FN2" child="Core_C_FN2"/>
+            <arccomment parent="LINUX_OS_FN2" child="F1"/>
+            <arccomment parent="LINUX_OS_FN3" child="Core_C_FN2"/>
+            <arccomment parent="LINUX_OS_FN3" child="F2"/>
+            <arccomment parent="LyIZxuhJDHY90RTwK7m2" child="F1"/>
+            <arccomment parent="RAM" child="L2" cost="true"/>
+            <arccomment parent="RAMTech_22n" child="RAM" cost="true"/>
+            <arccomment parent="RAMTech_22n" child="mau1"/>
+            <arccomment parent="RF" child="x86_64"/>
+            <arccomment parent="RFTech_22n" child="RF"/>
+            <arccomment parent="SFM_Wrong_Data" child="Core_C_FN1"/>
+            <arccomment parent="SFM_Wrong_Data" child="Core_C_FN2"/>
+            <arccomment parent="SFM_Wrong_Data" child="Core_C_FN3"/>
+            <arccomment parent="SFM_Wrong_Data" child="F1"/>
+            <arccomment parent="SFM_Wrong_Data" child="F2"/>
+            <arccomment parent="SFM_Wrong_Data" child="F3"/>
+            <arccomment parent="SFM_Wrong_Data" child="F4"/>
+            <arccomment parent="SFM_Wrong_Data" child="LINUX_OS_FN1"/>
+            <arccomment parent="SFM_Wrong_Data" child="LINUX_OS_FN2"/>
+            <arccomment parent="SFM_Wrong_Data" child="LINUX_OS_FN3"/>
+            <arccomment parent="SFM_Wrong_Data" child="decision1"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="Core_C_FN1"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="Core_C_FN2"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="Core_C_FN3"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="F1"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="F2"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="F3"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="F4"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="LINUX_OS_FN1"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="LINUX_OS_FN2"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="LINUX_OS_FN3"/>
+            <arccomment parent="SFM_Wrong_Instruction" child="decision1"/>
+            <arccomment parent="Util" child="L1"/>
+            <arccomment parent="cYYarHWrZUtDWimFQHUZ" child="L1"/>
+            <arccomment parent="cYYarHWrZUtDWimFQHUZ" child="LyIZxuhJDHY90RTwK7m2"/>
+            <arccomment parent="cYYarHWrZUtDWimFQHUZ" child="SFM_Wrong_Data"/>
+            <arccomment parent="decision1" child="L1Tech_22n"/>
+            <arccomment parent="decision1" child="LyIZxuhJDHY90RTwK7m2"/>
+            <arccomment parent="decision1" child="mau2"/>
+            <arccomment parent="decision2" child="mau2"/>
+            <arccomment parent="mau1" child="L2Tech_22n"/>
+            <arccomment parent="mau2" child="decision1"/>
+            <arccomment parent="x86_64" child="SFM_Wrong_Data"/>
+            <arccomment parent="x86_64" child="SFM_Wrong_Instruction"/>
+        </genie>
+    </extensions>
+</smile>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Network1" numsamples="1000">
+	<properties>
+		<property id="prop1">01</property>
+		<property id="prop2">02</property>
+		<property id="prop3">03</property>
+		<property id="prop4">04</property>
+	</properties>
+	<algparams>
+		<epis proplen="0" numstates1="1" numstates2="2" numstates3="3" 
+		      eps1="0.1" eps2="30.02" eps3="10.985" eps4="1"></epis>
+	</algparams>
+	<nodes>
+		<cpt id="L2Tech_22n">
+			<state id="Failure" />
+			<state id="Success" />
+			<probabilities>0.02 0.98</probabilities>
+			<property id="Area">0</property>
+			<property id="VID">L2_T</property>
+			<property id="Cluster">22n</property>
+			<property id="Type">TECH</property>
+		</cpt>
+		<cpt id="RAMTech_22n">
+			<state id="Failure" />
+			<state id="Success" />
+			<probabilities>0.25 0.75</probabilities>
+			<property id="Area">0</property>
+			<property id="VID">RAM_T</property>
+			<property id="Cluster">22n</property>
+			<property id="Type">TECH</property>
+		</cpt>
+		<utility id="RAM">
+			<parents>RAMTech_22n</parents>
+			<utilities>0.98 0.02 0.001 0.999</utilities>
+			<property id="Area">500</property>
+			<property id="VID">RAM</property>
+			<property id="Type">HW</property>
+		</utility>
+		<utility id="Util">
+			<utilities>0.98 0.02 0.001 0.999</utilities>
+		</utility>
+		<mau id="mau1">
+			<parents>RAMTech_22n</parents>
+			<weights>0.98 0.02 0.001 0.999</weights>
+			<property id="Type">HW</property>
+		</mau>
+		<mau id="mau2">
+			<weights>0.98 0.02 0.001 0.999</weights>
+		</mau>
+		<cpt id="L2">
+			<state id="Failure" />
+			<state id="Success" />
+			<parents>L2Tech_22n RAM</parents>
+			<probabilities>0.98 0.02 0.793 0.207 0.26 0.74 0.003 0.997</probabilities>
+			<property id="Area">200</property>
+			<property id="Cluster">x86</property>
+			<property id="VID">DC2</property>
+			<property id="parents_order">L2_T RAM</property>
+			<property id="cpt">0.98 0.02 0.793 0.207 0.26 0.74 0.003 0.997</property>
+			<property id="Type">HW</property>
+		</cpt>
+		<noisymax id="L1Tech_22n">
+			<state id="Failure" />
+			<state id="Success" />
+			<strengths>1 2 3</strengths>
+			<parameters>0.4 0.6 0.004 0.996</parameters>
+			<property id="Area">0</property>
+			<property id="Cluster">22n</property>
+			<property id="VID">L1_T</property>
+			<property id="Type">TECH</property>
+		</noisymax>
+		<noisymax id="L1">
+			<state id="Failure" />
+			<state id="Success" />
+			<parents>L1Tech_22n</parents>
+			<parameters>0.4 0.6 0.004 0.996</parameters>
+			<property id="Area">90</property>
+			<property id="Cluster">x86</property>
+			<property id="VID">DC1</property>
+			<property id="parents_order">L1_T</property>
+			<property id="cpt">0.4 0.6 0.004 0.996</property>
+			<property id="Type">HW</property>
+		</noisymax>
+		<noisyadder id="RFTech_22n">
+			<state id="Failure" />
+			<state id="Success" />
+			<dstates>5 69 8 7</dstates>
+			<weights>0.0001 0.9999 1.59873</weights>
+			<parameters>0.0001 0.9999 5.6 3.3332</parameters>
+			<property id="Area">0</property>
+			<property id="Cluster">22n</property>
+			<property id="VID">RF_T</property>
+			<property id="Type">TECH</property>
+		</noisyadder>
+		<cpt id="RF">
+			<state id="Failure" />
+			<state id="Success" />
+			<parents>RFTech_22n</parents>
+			<probabilities>0.89 0.11 0.01 0.99</probabilities>
+			<property id="Area">50</property>
+			<property id="Cluster">x86</property>
+			<property id="VID">GPR</property>
+			<property id="parents_order">RF_T</property>
+			<property id="cpt">0.89 0.11 0.01 0.99</property>
+			<property id="Type">HW</property>
+		</cpt>
+		<cpt id="x86_64">
+			<state id="Failure" />
+			<state id="Success" />
+			<parents>L2 L1 RF</parents>
+			<probabilities>0.8 0.2 0.78 0.22 0.334 0.666 0.45 0.55 0.87 0.13 0.85 0.15 0.21 0.79 0 1</probabilities>
+			<property id="Area">700</property>
+			<property id="Cluster">x86</property>
+			<property id="VID">UPC</property>
+			<property id="parents_order">DC2 DC1 GPR</property>
+			<property id="cpt">0.8 0.2 0.78 0.22 0.334 0.666 0.45 0.55 0.87 0.13 0.85 0.15 0.21 0.79 0 1</property>
+			<property id="Type">MHW</property>
+		</cpt>
+		<deterministic id="SFM_Wrong_Data">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>x86_64</parents>
+			<resultingstates>State0 State1</resultingstates>
+			<property id="Area">0</property>
+			<property id="Cluster">SFM</property>
+			<property id="VID">WD</property>
+			<property id="Type">SFM</property>
+		</deterministic>
+		<cpt id="SFM_Wrong_Instruction">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>x86_64</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="Cluster">FM</property>
+			<property id="VID">WI</property>
+			<property id="Type">SFM</property>
+		</cpt>
+		<cpt id="LINUX_OS_FN1">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>SFM_Wrong_Instruction SFM_Wrong_Data</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="Cluster">LINUX</property>
+			<property id="VID">PRINT_F</property>
+			<property id="parents_order">WI WD</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<decision id="decision1">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>SFM_Wrong_Instruction SFM_Wrong_Data</parents>
+			<property id="Area">0</property>
+			<property id="Cluster">LINUX</property>
+		</decision>
+		<decision id="decision2">
+			<state id="State0" />
+			<state id="State1" />
+		</decision>
+		<cpt id="Core_C_FN1">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>LINUX_OS_FN1 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="Cluster">C_IMPLEMENTED</property>
+			<property id="VID">CORE1_F</property>
+			<property id="parents_order">PRINT_F WD WI</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="LINUX_OS_FN3">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>SFM_Wrong_Instruction SFM_Wrong_Data</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="Cluster">LINUX</property>
+			<property id="VID">MEM_F</property>
+			<property id="parents_order">WI WD</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="LINUX_OS_FN2">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="Cluster">LINUX</property>
+			<property id="VID">MATH_F</property>
+			<property id="parents_order">WI WD</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="Core_C_FN2">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>LINUX_OS_FN3 LINUX_OS_FN2 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="Cluster">C_IMPLEMENTED</property>
+			<property id="VID">CORE2_F</property>
+			<property id="parents_order">MEM_F MATH_F WD WI</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="Core_C_FN3">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Core_C_FN1 Core_C_FN2 SFM_Wrong_Data SFM_Wrong_Instruction</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="Cluster">C_IMPLEMENTED</property>
+			<property id="VID">MAIN_CORE_F</property>
+			<property id="parents_order">CORE1_F CORE2_F WD WI</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="F2">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>SFM_Wrong_Data SFM_Wrong_Instruction LINUX_OS_FN3</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="VID">F2_T</property>
+			<property id="parents_order">WD WI MEM_F</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="F3">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>SFM_Wrong_Data SFM_Wrong_Instruction Core_C_FN3 F2</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="parents_order">WD WI MAIN_CORE_F F2_T</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="F1">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>SFM_Wrong_Data SFM_Wrong_Instruction LINUX_OS_FN2</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="VID">F1_T</property>
+			<property id="parents_order">WD WI MATH_F</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="F4">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>SFM_Wrong_Data SFM_Wrong_Instruction LINUX_OS_FN1 F1</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="parents_order">WD WI PRINT_F F1_T</property>
+			<property id="cpt">0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</property>
+			<property id="Type">SW</property>
+		</cpt>
+		<cpt id="Output">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>F3 F4</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+			<property id="Area">0</property>
+			<property id="Cluster">Output</property>
+			<property id="VID">MainOut</property>
+			<property id="Type">SYSD</property>
+		</cpt>
+	</nodes>
+	<observationcost>
+		<node id="nodo1">
+			<parents>parent1 parent2 parent3</parents>
+			<cost>0.1 0.2 0.3 10 0</cost>
+		</node>
+		<node id="nodo2">
+			<parents>parent1 parent2 parent3</parents>
+			<cost>0.1 0.2 0.3 10 0</cost>
+		</node>
+		<node id="nodo3">
+			<parents>parent1 parent2 parent3</parents>
+			<cost>0.1 0.2 0.3 10 0</cost>
+		</node>
+	</observationcost>
+</smile>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile id="Network 1" version="1.0">
+    <nodes>
+        <decision id="Node1">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+            <parents>Node4</parents>
+        </decision>
+        <decision id="Node2">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+        </decision>
+        <decision id="Node3">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+            <parents>Node2</parents>
+        </decision>
+        <decision id="Node4">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+        </decision>
+        <decision id="Node5">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+            <parents>Node4</parents>
+        </decision>
+        <decision id="Node6">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+            <parents>Node1</parents>
+        </decision>
+    </nodes>
+    <extensions>
+        <genie version="1.0" name="Network 1" faultnameformat="user">
+            <submodel id="Model">
+                <name>Model</name>
+                <interior color="ffffff"/>
+                <outline color="ff0000" width="1"/>
+                <font color="ff0000" name="Times" size="9" bold="true" align="left"/>
+                <position>-5040 -1903 -4590 -2123</position>
+                <comment>model</comment>
+                <node id="Node2">
+                    <name>Node2</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="ff0000" width="1"/>
+                    <font color="ff0000" name="Times" size="10" bold="true" align="left"/>
+                    <position>266 72 328 42</position>
+                </node>
+                <node id="Node4">
+                    <name>Node4</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="ff0000" width="1"/>
+                    <font color="ff0000" name="Times" size="10" bold="true" align="left"/>
+                    <position>106 149 174 119</position>
+                </node>
+            </submodel>
+            <submodel id="Model2">
+                <name>Model2</name>
+                <interior color="FFFFFF"/>
+                <outline color="0000ff" width="1"/>
+                <font color="0000ff" name="Times" size="9" bold="true" align="left"/>
+                <position>-4357 -1943 -3907 -2163</position>
+                <node id="Node1">
+                    <name>Node1</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="0000ff" width="2"/>
+                    <font color="0000ff" name="Times" size="10" align="left"/>
+                    <position>199 157 264 129</position>
+                </node>
+                <node id="Node3">
+                    <name>Node3</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="0000ff" width="2"/>
+                    <font color="0000ff" name="Times" size="10" align="left"/>
+                    <position>149 86 214 56</position>
+                </node>
+            </submodel>
+            <node id="Node5">
+                <name>Node5</name>
+                <interior color="FFFFFF"/>
+                <outline color="000000" width="1"/>
+                <font color="000000" name="Times" size="8" align="left"/>
+                <position>-4881 -1562 -4816 -1592</position>
+            </node>
+            <node id="Node6">
+                <name>Node6</name>
+                <interior color="FFFFFF"/>
+                <outline color="000000" width="1"/>
+                <font color="000000" name="Times" size="8" align="left"/>
+                <position>-4575 -1551 -4510 -1581</position>
+            </node>
+            <arccomment parent="Node1" child="Node6"/>
+            <arccomment parent="Node2" child="Node3"/>
+            <arccomment parent="Node4" child="Node1"/>
+            <arccomment parent="Node4" child="Node5"/>
+        </genie>
+    </extensions>
+</smile>

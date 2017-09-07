@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile id="Network 1" version="1.0">
+    <nodes>
+        <decision id="Node 118,52">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+        </decision>
+        <decision id="Node -51,-137">
+            <state id="OK" label="OK"/>
+            <state id="KO" label="KO"/>
+        </decision>
+    </nodes>
+    <extensions>
+        <genie version="1.0" name="Network 1" faultnameformat="user">
+            <submodel id="Model -228,-282">
+                <name>New Model</name>
+                <interior color="FFFFFF"/>
+                <outline color="000000" width="1"/>
+                <font color="000000" name="Times" size="8"/>
+                <position>-465 -844 48 -568</position>
+                <node id="Node -51,-137">
+                    <name>New Node</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="Times" size="8"/>
+                    <position>256 108 321 138</position>
+                </node>
+                <submodel id="Model -296,-324">
+                    <name>New Model</name>
+                    <interior color="FFFFFF"/>
+                    <outline color="000000" width="1"/>
+                    <font color="000000" name="Times" size="8"/>
+                    <position>110 -65 410 70</position>
+                    <node id="Node 118,52">
+                        <name>New Node</name>
+                        <interior color="FFFFFF"/>
+                        <outline color="000000" width="1"/>
+                        <font color="000000" name="Times" size="8"/>
+                        <position>74 19 139 49</position>
+                    </node>
+                    <textbox>
+                        <caption>New Note</caption>
+                        <font color="000000" name="Times" size="8"/>
+                        <position>161 33 236 71</position>
+                    </textbox>
+                </submodel>
+            </submodel>
+        </genie>
+    </extensions>
+</smile>
