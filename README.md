@@ -2,9 +2,15 @@
 
 An open source library for the visualization of complex graphs
 
-## Getting Started
 
-Launche the build.sh script to build the entire project; it accepts one parmater only to define the optimization level: it could be **Debug** or **Release**.
+### Prerequisites
+
+To run all the software modules of this project, first you need to install the Qt development environment. You can download it here (https://www1.qt.io/download/)
+
+
+### Installing
+
+Launch the build.sh script to build the entire project; it accepts one parmater only to define the optimization level: it could be **Debug** or **Release**.
 The first time you launch the script, it will generate a configuration file (_qtnets.conf_) you need to edit in order to provide the build system with the correct installation paths.
 Here is an example of the default _qtnets.conf_ file:
 ```
@@ -27,63 +33,23 @@ export SHARED_ROOT="$PROJ_ROOT/Shared"
 
 after the build process is done, you will find following resources:
 ```
-OUT/$1/Libs
-OUT/$1/Plugins
-OUT/$1/Include
-QtNetsEditor
-QtNetsTest
-QtNetsBenchmark
-profile.sh
-launch.sh
-test.sh
-benchmark.sh
+OUT/$1/Libs/
+OUT/$1/Plugins/
+OUT/$1/Include/
+OUT/$1/QtNetsEditor
+OUT/$1/QtNetsTest
+OUT/$1/QtNetsBenchmark
+OUT/$1/profile.sh
+OUT/$1/launch.sh
+OUT/$1/test.sh
+OUT/$1/benchmark.sh
 ```
-
 
 **Note**: this build system is guaranteed to work only on linux-based environments.
 
-### Prerequisites
-
-To run all the software modules of this project, first you need to install the Qt development environment. You can download it here (https://www1.qt.io/download/)
-
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+After the project has been built (see the Installing section), simply run the **OUT/$1/test.sh** script in your sheel; it will execute the unit tests contained in the _OUT/$1/QtNetsTest_ application and print the result on stdout.
 
 ## Deployment
 
@@ -105,16 +71,12 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Angelo Prudentino** - *Design and development* - [angeloprudentino](https://github.com/angeloprudentino)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU General Public License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* I'd like to thank my tutors for this thesis project: Prof. [Stefano Di Carlo](https://www.testgroup.polito.it/stefano-di-carlo/) and Eng. [Alessandro Savino](https://www.testgroup.polito.it/alessandro-savino/). They always helped me during hard times and guided me to the final goal.
