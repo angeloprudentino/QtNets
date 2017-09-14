@@ -1,6 +1,7 @@
 # QtNets
 
-An open source library for the visualization of complex graphs
+An open source library for the visualization of complex graphs. 
+For more info check [qtnets_thesis.pdf](Doc/qtnets_thesis.pdf) to study the entire thesis project or [qtnets_resume.pdf](Doc/qtnets_resume.pdf) to access a shorter description.
 
 
 ### Prerequisites
