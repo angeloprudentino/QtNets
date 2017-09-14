@@ -2,6 +2,7 @@
 
 An open source library for the visualization of complex graphs. 
 For more info check [qtnets_thesis.pdf](Doc/qtnets_thesis.pdf) to study the entire thesis project or [qtnets_resume.pdf](Doc/qtnets_resume.pdf) to access a shorter description.
+The project is also provided with a Doxigen generated documentation which describes the technical details of all APIs; it is accessible through _Doc/index.html_ on your local machine.
 
 
 ### Prerequisites
@@ -48,21 +49,21 @@ OUT/$1/benchmark.sh
 
 **Note**: this build system is guaranteed to work only on linux-based environments.
 
+
 ## Running the tests
 
 After the project has been built (see the Installing section), simply run the **OUT/$1/test.sh** script in your sheel; it will execute the unit tests contained in the _OUT/$1/QtNetsTest_ application and print the result on stdout.
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Authors
 
 * **Angelo Prudentino** - *Design and development* - [angeloprudentino](https://github.com/angeloprudentino)
 
+
 ## License
 
 This project is licensed under the GNU General Public License - see the [LICENSE.md](LICENSE.md) file for details
+
 
 ## Acknowledgments
 
